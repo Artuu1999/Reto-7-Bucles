@@ -77,8 +77,26 @@ while a < 1000:
   a +=2
 ```
 Al ejecutar el programa diseñado se puede ver de la posterior manera:
+
 ![image](https://user-images.githubusercontent.com/124615034/227862743-c92bfde7-dde4-4a9a-921d-0297ee6d00dc.png)
+
 Dado que el programa está configurado para imprimir solo 30 resultados, se muestra como inicia la lista de carácteres impar y como termina la lista par.
+A continuación el digrama de flujo representativo del ejemplo número 2:
+```mermaid
+flowchart TD
+ A(Listado de números pares e impares)-- par -->B[a = 2]
+ A-- impar -->C[i = 1]
+ B-->D{a < 1000}
+ D-- si -->E[print a]
+ D-- no -->F[FIN]
+ E-->G[a +=2]
+ G-->D
+ C-->R{i < 1000}
+ R-- si -->T[print i]
+ R-- no -->F[FIN]
+ T-->Z[a +=2]
+ Z-->R
+```
 
 ## Ejemplo No. 3
 El ejemplo consiste en diseñar un programa que imprima los números pares de forma descendente iniciando de un número natural ingresado por el usuario.
@@ -180,6 +198,7 @@ while A >= B:
 print("La población del país B superará a la de A en el año "+str(t)+"")
 ```
 El programa funcionando se ve así:
+
 ![image](https://user-images.githubusercontent.com/124615034/227871371-7f27cd48-ae2c-42bd-a731-ab2f674c75cc.png)
 
 ## Ejemplo No. 5
@@ -217,45 +236,149 @@ while i <= a:
 print("El número factorial del número "+str(a)+" es "+str(n)+"")
 ```
 Al ejecutar el programa corre así:
+
 ![image](https://user-images.githubusercontent.com/124615034/227879278-f9214c05-da55-4024-af77-05c7c9fd5172.png)
+
 ![image](https://user-images.githubusercontent.com/124615034/227879330-e1277b73-5c5e-4f2e-a394-e1d834f6f168.png)
 
 ## Ejemplo No. 6
 Diseñar un programa que adivine un número de 1 a 100, preguntando si es mayor o menor.
+1. Solicitar al usuario el ingreso del número que se quiera adivinar
 ```sh
-numero = int(input("Ingresa el número a adivinar (1-100): "))
-adivinado = False
-
-while not adivinado:
-    intento = int(input("Adivina el número (1-100): "))
-    
-    if intento < numero:
-        print("El número es mayor.")
-    elif intento > numero:
-        print("El número es menor.")
-    else:
-        print("¡Adivinaste!")
-        adivinado = True
+n= int(input("Ingresa el número a adivinar (1-100): "))
 ```
+2. Inicializar la variables
+```sh
+a = False
+```
+3. Colocar el condicional
+```sh
+while not a
+```
+4. Solicitar al usuario que adivine el número ingresado por el otro usuario
+```sh
+t = int(input("Adivina el número (1-100): "))
+```
+5. Imprimir según sea el caso, ya sea  que la cifra ingresada sea mayor, menor o igual a la ingresada primeramente
+```sh
+    if t < n:
+        print("El número es mayor")
+    elif t > n:
+        print("El número es menor")
+    else:
+        print("¡Adivinaste el número!")
+```
+6. Actalizar la variable
+```sh
+a = True
+```
+El código completo:
+```sh
+n= int(input("Ingresa el número a adivinar (1-100): "))
+a = False
+while not a:
+    t = int(input("Adivina el número (1-100): "))
+    if t < n:
+        print("El número es mayor")
+    elif t > n:
+        print("El número es menor")
+    else:
+        print("¡Adivinaste el número!")
+        a = True
+```
+El programa funcionando
+
+![image](https://user-images.githubusercontent.com/124615034/228140319-fd614d60-290e-43da-b254-51e0d27b8505.png)
+
+![image](https://user-images.githubusercontent.com/124615034/228140400-38d3f6a0-1441-44f1-9898-2422c63a4079.png)
+
+![image](https://user-images.githubusercontent.com/124615034/228140462-bb65e94e-d3ad-49fb-8067-85b77527c4c0.png)
+
+![image](https://user-images.githubusercontent.com/124615034/228140527-c609b689-c04b-4f71-b0c6-d7b7c87fe41f.png)
+
+![image](https://user-images.githubusercontent.com/124615034/228140905-ab73ae2d-451b-4044-8485-2d428e853f16.png)
+
+![image](https://user-images.githubusercontent.com/124615034/228140939-883e808f-7b07-4bbd-b034-b6d35cb7aee6.png)
 
 ## Ejemplo No. 7
+Diseñar un programa que al ingresar un número del 1 al 50 muestre sus divisores
+1. Solicitar el ingreso de un número natural que se encuentre dentro del rango de 2 y 50.
 ```sh
-i = int(input("Ingrese un número entre 2 y 50  "))
-a = 1
-if i <=50 and i>=2:
- print("Los divisores de "+ str(i)+ " son:")
- while a <= i:
-  if i % a == 0:
-    print(a)
-  a = a + 1
-else:
- print("el número ingresado no esta entre 2 y 50")
+n = int(input("Ingresa un número entre 2 y 50: "))
 ```
+2. Se inicializa la variables de los divisores
+```sh
+i = 1
+```
+3. Se realiza el condicional, el cual determina que se realice el bucle mientras los divisores sean menores o iguales al número ingresado
+```sh
+while i <= n:
+```
+4. Si el residuo del número ingreso entre el divisor es igual a cero imprimir el resultado.
+```sh
+if n%i == 0:
+    print (i)
+```
+5. Actualizar la variable
+```sh
+i += 1
+```
+El pseudocódigo completo se ve de la siguiente manera:
+```sh
+n = int(input("Ingresa un número natural entre 2 y 50: "))
+i = 1
+while i <= n:
+  if n%i == 0:
+    print (i)
+  i += 1
+```
+El programa funciona de la siguiente manera:
+
+![image](https://user-images.githubusercontent.com/124615034/228144524-d21ea923-6249-4135-9bed-74f141d0aba0.png)
+
+![image](https://user-images.githubusercontent.com/124615034/228144562-2a3724b3-d45c-4597-a8f5-1a40ace49cf4.png)
 
 ## Ejemplo No. 8
+Mediante el uso de funciones se debe realizar un código que imprima los números primos entre 1 y 100
+1. Definir la función
+```sh
+def es_primo(n)
+```
+2. Realizar el condicional, si son menores a dos retornar la variable booleana falsa
+```sh
+if n < 2:
+  return False
+```
+3. Inicializar el bucle y utilizar la palabra resevada while
+```sh
+i = 2
+  while i < n:
+```
+4. A partir de dicha inicialización realizar otro condicional para determinar si el número tiene más divisores a parte de el mismo y el 1
+```sh
+if n % i == 0:
+  return False
+```
+5. Actualizar
+```sh
+i = i + 1
+  return True
+```
+6. Imprimir los valores de "n"
+```sh
+print("Los números primos del 1 al 100 son:")
+```
+7. Utilizar la función definida anteriormente
+```sh
+n= 1
+while n <= 100:
+    if es_primo(n):
+        print(n)
+    n =n + 1
+```
+Código solución a dicho problema
 ```sh
 def es_primo(n):
-    
     if n < 2:
         return False
     i = 2
@@ -269,6 +392,17 @@ print("Los números primos del 1 al 100 son:")
 n= 1
 while n <= 100:
     if es_primo(n):
-        print👎
+        print(n)
     n =n + 1
 ```
+Al ejecutarse el programa corre así:
+
+![image](https://user-images.githubusercontent.com/124615034/228146943-05de9178-81a9-4106-a331-afd2e14d56b4.png)
+
+
+## FIN
+Hasta acá llega nuestro camino en el presente repo, espero que haya sido de tu interés, si encuentras algún error o alguna inconsistencia, no dudes en contactarme y hacermela saber.
+Muchas Gracias por tu atención.
+
+   **"Llega un momento en el que dejas de esperar, dejas de escribir, dejas de buscar y comienzas a vivir sin depender"**
+         - Anónimo
