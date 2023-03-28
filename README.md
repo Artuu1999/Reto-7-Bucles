@@ -27,7 +27,20 @@ while i <= 100:
     i += 1
 ```
 El programa funciona de  la siguiente manera, ejecutandolo dentro de un notebook de python.
+
 ![image](https://user-images.githubusercontent.com/124615034/227854562-0a6140cc-e32d-4d83-9bbd-34459e1d4458.png)
+
+El diagrama de flujo correspondiente al ejemplo número 1 es el presentado a continuación:
+```mermaid
+flowchart TD
+    A(Listado del 1 al 100 con sus cuadrados) --> B[inicia]
+    B --> D[i = 1]
+    D-- Mientras---E{i <= 100}
+    E --> |no| P(fin)
+    E --> |si| O[imprimir el número y su respectivo cuadrado]
+    O--> F[i += 1]
+    F--> E
+```
 
 ## Ejemplo No. 2
 Ahora bien se debe imprimir en python un listado de números impares dentro del intervalo de 1 y 999, al lado de aquel listado se debe imprimir un listado de números pares dentro del rango de 2 a 100.
