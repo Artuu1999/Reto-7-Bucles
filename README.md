@@ -191,8 +191,6 @@ Al ejecutar el programa corre así:
 ## Ejemplo No. 6
 Diseñar un programa que adivine un número de 1 a 100, preguntando si es mayor o menor.
 ```sh
-python
-Copy code
 numero = int(input("Ingresa el número a adivinar (1-100): "))
 adivinado = False
 
