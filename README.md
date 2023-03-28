@@ -190,3 +190,55 @@ Al ejecutar el programa corre así:
 
 ## Ejemplo No. 6
 Diseñar un programa que adivine un número de 1 a 100, preguntando si es mayor o menor.
+```sh
+python
+Copy code
+numero = int(input("Ingresa el número a adivinar (1-100): "))
+adivinado = False
+
+while not adivinado:
+    intento = int(input("Adivina el número (1-100): "))
+    
+    if intento < numero:
+        print("El número es mayor.")
+    elif intento > numero:
+        print("El número es menor.")
+    else:
+        print("¡Adivinaste!")
+        adivinado = True
+```
+
+## Ejemplo No. 7
+```sh
+i = int(input("Ingrese un número entre 2 y 50  "))
+a = 1
+if i <=50 and i>=2:
+ print("Los divisores de "+ str(i)+ " son:")
+ while a <= i:
+  if i % a == 0:
+    print(a)
+  a = a + 1
+else:
+ print("el número ingresado no esta entre 2 y 50")
+```
+
+## Ejemplo No. 8
+```sh
+def es_primo(n):
+    
+    if n < 2:
+        return False
+    i = 2
+    while i < n:
+        if n % i == 0:
+            return False
+        i = i + 1
+    return True
+
+print("Los números primos del 1 al 100 son:")
+n= 1
+while n <= 100:
+    if es_primo(n):
+        print👎
+    n =n + 1
+```
