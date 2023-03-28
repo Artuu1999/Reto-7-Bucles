@@ -120,13 +120,32 @@ while i >= 2:
      i -= 2
 ```
 Así funciona el programa ingresando un número par como el 12:
+
 ![image](https://user-images.githubusercontent.com/124615034/227865227-580e4d55-f8a8-4252-ba15-add313049c79.png)
+
 ![image](https://user-images.githubusercontent.com/124615034/227865291-92abab22-62ac-4f74-a69b-2da08176088c.png)
 
 Y así funciona el programa ingresando un número impar como el 17:
+
 ![image](https://user-images.githubusercontent.com/124615034/227865450-2b8741bc-3df9-4146-b1e0-a023ab8649fc.png)
+
 ![image](https://user-images.githubusercontent.com/124615034/227865514-8005c22c-2e5c-44d7-8580-33cc5222b546.png)
 
+El diagrama correspondiente es el siguiente:
+```mermaid
+flowchart TD
+    A(Números pares de forma descendente) --> B[Ingrese un número natura]
+    B --> D[i = número ingresado]
+    D-- Mientras---T{i >= 2}
+    T --> E{i%2 == 0}
+    E --> |no| P[print i-1]
+    P --> X[i -= 2]
+    E --> |si| O[print i]
+    O--> F[i -= 2]
+    F--> W[i = 2]
+    X--> W
+    W--> Y(FIN)
+```
 ## Ejemplo No. 4
 En el año 2022 el país A tendrá una población de 25 millones de habitantes y el país B de 18:9 millones. Las tasas de crecimiento anual de la población serán de 2% y 3% respectivamente. Desarrollar un algoritmo para informar en que año la población del país B superará a la de A.
 1. Se declaran las variables, es decir la población de los países y el año en el que dichos países tienen esa cantidad de población.
